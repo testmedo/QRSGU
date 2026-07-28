@@ -1,119 +1,107 @@
 <style>
-  /* حاوية الروابط الأساسية */
+  /* ضبط الصفحة لتكون متناسقة وملء الشاشة */
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0f172a; /* خلفية داكنة راقية */
+    box-sizing: border-box;
+  }
+
+  /* حاوية الروابط الأساسية - تأخذ عرض الشاشة بالكامل */
   .sgu-container {
     width: 100%;
-    max-width: 680px;
-    margin: 15px auto;
-    padding: 20px 16px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 24px 16px 40px 16px;
+    background: #0f172a;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     direction: rtl;
     text-align: right;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /* عناوين الأقسام */
   .sgu-title {
-    color: #0f172a;
-    font-size: 1.15rem;
+    color: #f8fafc;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin: 10px 0 16px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f1f5f9;
+    margin: 15px 0 18px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #334155;
     display: flex;
     align-items: center;
     gap: 10px;
   }
   
   .sgu-subtitle {
-    margin-top: 30px;
+    margin-top: 35px;
   }
 
   /* قائمة الأزرار */
   .sgu-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    width: 100%;
   }
 
-  /* بطاقات/أزرار الروابط - مصممة خصيصاً للشاشات واللمس */
+  /* أزرار كبيرة وعريضة تملأ الشاشة */
   .sgu-link-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 56px; /* ارتفاع مريح جداً للضغط باليد */
-    padding: 14px 18px;
-    background-color: #f8fafc;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 12px;
+    min-height: 60px; /* ارتفاع مريح جداً للضغط */
+    padding: 16px 20px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 14px;
     text-decoration: none !important;
-    color: #1e293b !important;
-    font-size: 1rem;
+    color: #f1f5f9 !important;
+    font-size: 1.05rem;
     font-weight: 600;
     box-sizing: border-box;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.2s ease-in-out;
     -webkit-tap-highlight-color: transparent;
   }
 
   .sgu-link-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     line-height: 1.4;
   }
 
   .sgu-icon {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .sgu-arrow {
-    font-size: 1.2rem;
-    color: #94a3b8;
-    transition: transform 0.25s ease, color 0.25s ease;
+    font-size: 1.3rem;
+    color: #64748b;
+    transition: transform 0.2s ease, color 0.2s ease;
   }
 
-  /* تأثير التفاعل والمؤشر عند اللمس أو تحريك الماوس */
-  .sgu-link-card:hover, .sgu-link-card:active {
-    background-color: #1e3a8a; /* لون أزرق كحلي فخم */
+  /* تأثير اللمس */
+  .sgu-link-card:active, .sgu-link-card:hover {
+    background-color: #2563eb;
     color: #ffffff !important;
-    border-color: #1e3a8a;
-    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.25);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
   }
 
-  .sgu-link-card:hover .sgu-arrow, .sgu-link-card:active .sgu-arrow {
+  .sgu-link-card:active .sgu-arrow, .sgu-link-card:hover .sgu-arrow {
     color: #ffffff;
     transform: translateX(-6px);
-  }
-
-  /* تخصيصات ممتازة لشاشات الهواتف المحمولة */
-  @media (max-width: 600px) {
-    .sgu-container {
-      padding: 16px 10px;
-      border-radius: 12px;
-      box-shadow: none; /* إلغاء الظل الثقيل على الهاتف لمظهر ناعم */
-      border: 1px solid #f1f5f9;
-    }
-
-    .sgu-title {
-      font-size: 1.05rem;
-      margin-bottom: 12px;
-    }
-
-    .sgu-link-card {
-      padding: 14px 14px;
-      font-size: 0.95rem; /* حجم خط واضح ووافي */
-      min-height: 52px;
-    }
-
-    .sgu-icon {
-      font-size: 1.2rem;
-    }
   }
 </style>
 
