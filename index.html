@@ -1,73 +1,119 @@
 <style>
+  /* حاوية الروابط الأساسية */
   .sgu-container {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 25px;
+    width: 100%;
+    max-width: 680px;
+    margin: 15px auto;
+    padding: 20px 16px;
     background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     direction: rtl;
     text-align: right;
+    box-sizing: border-box;
   }
-  
+
+  /* عناوين الأقسام */
   .sgu-title {
-    color: #1a365d;
-    font-size: 22px;
+    color: #0f172a;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin: 10px 0 16px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #f1f5f9;
     display: flex;
     align-items: center;
     gap: 10px;
   }
   
   .sgu-subtitle {
-    margin-top: 25px;
+    margin-top: 30px;
   }
 
+  /* قائمة الأزرار */
   .sgu-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
+  /* بطاقات/أزرار الروابط - مصممة خصيصاً للشاشات واللمس */
   .sgu-link-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 18px;
+    width: 100%;
+    min-height: 56px; /* ارتفاع مريح جداً للضغط باليد */
+    padding: 14px 18px;
     background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
     text-decoration: none !important;
-    color: #2d3748 !important;
+    color: #1e293b !important;
+    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .sgu-link-card:hover {
-    background-color: #0284c7;
-    color: #ffffff !important;
-    border-color: #0284c7;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .sgu-link-info {
     display: flex;
     align-items: center;
     gap: 12px;
+    line-height: 1.4;
+  }
+
+  .sgu-icon {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sgu-arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    transition: transform 0.25s ease, color 0.25s ease;
   }
 
-  .sgu-link-card:hover .sgu-arrow {
-    transform: translateX(-5px);
+  /* تأثير التفاعل والمؤشر عند اللمس أو تحريك الماوس */
+  .sgu-link-card:hover, .sgu-link-card:active {
+    background-color: #1e3a8a; /* لون أزرق كحلي فخم */
+    color: #ffffff !important;
+    border-color: #1e3a8a;
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.25);
+  }
+
+  .sgu-link-card:hover .sgu-arrow, .sgu-link-card:active .sgu-arrow {
+    color: #ffffff;
+    transform: translateX(-6px);
+  }
+
+  /* تخصيصات ممتازة لشاشات الهواتف المحمولة */
+  @media (max-width: 600px) {
+    .sgu-container {
+      padding: 16px 10px;
+      border-radius: 12px;
+      box-shadow: none; /* إلغاء الظل الثقيل على الهاتف لمظهر ناعم */
+      border: 1px solid #f1f5f9;
+    }
+
+    .sgu-title {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .sgu-link-card {
+      padding: 14px 14px;
+      font-size: 0.95rem; /* حجم خط واضح ووافي */
+      min-height: 52px;
+    }
+
+    .sgu-icon {
+      font-size: 1.2rem;
+    }
   }
 </style>
 
@@ -80,32 +126,50 @@
   
   <div class="sgu-list">
     <a href="https://sgu.edu.eg" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">💻 الموقع الإلكتروني الرسمي للجامعة</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">💻</span>
+        <span>الموقع الإلكتروني الرسمي للجامعة</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
     
     <a href="https://www.facebook.com/SGU055" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">📘 الصفحة الرسمية على Facebook</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">📘</span>
+        <span>الصفحة الرسمية على Facebook</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.instagram.com/saleheyauniversity" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">📷 الصفحة الرسمية على Instagram</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">📷</span>
+        <span>الصفحة الرسمية على Instagram</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.tiktok.com/@sgu_university" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">🎵 الصفحة الرسمية على TikTok</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">🎵</span>
+        <span>الصفحة الرسمية على TikTok</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.linkedin.com/in/sgu-university-84996b390/" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">💼 الصفحة الرسمية على LinkedIn</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">💼</span>
+        <span>الصفحة الرسمية على LinkedIn</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.youtube.com/@elsaleheyaelgadidauniversi6872" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">▶️ القناة الرسمية على YouTube</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">▶️</span>
+        <span>القناة الرسمية على YouTube</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
   </div>
@@ -117,27 +181,42 @@
 
   <div class="sgu-list">
     <a href="https://www.facebook.com/SGUpharmacy" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">💊 الصفحة الرسمية لكلية الصيدلة</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">💊</span>
+        <span>الصفحة الرسمية لكلية الصيدلة</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.facebook.com/SGUphysicaltherapy/" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">🏃‍♂️ الصفحة الرسمية لكلية العلاج الطبيعي</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">🏃‍♂️</span>
+        <span>الصفحة الرسمية لكلية العلاج الطبيعي</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.facebook.com/sgu.dentistry/" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">🦷 الصفحة الرسمية لكلية طب الأسنان</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">🦷</span>
+        <span>الصفحة الرسمية لكلية طب الأسنان</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.facebook.com/SGUcomputerandinformation" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">🖥️ الصفحة الرسمية لكلية الحاسبات والمعلومات</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">🖥️</span>
+        <span>الصفحة الرسمية لكلية الحاسبات والمعلومات</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
 
     <a href="https://www.facebook.com/SGUManagement/" target="_blank" rel="noopener" class="sgu-link-card">
-      <div class="sgu-link-info">📊 الصفحة الرسمية لكلية الإدارة والاقتصاد الدولي</div>
+      <div class="sgu-link-info">
+        <span class="sgu-icon">📊</span>
+        <span>الصفحة الرسمية لكلية الإدارة والاقتصاد الدولي</span>
+      </div>
       <span class="sgu-arrow">←</span>
     </a>
   </div>
